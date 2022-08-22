@@ -1,0 +1,55 @@
+body{
+    background: #eee;
+    font-family:'Courier New', Courier, monospace;
+}
+
+div.images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+div.image-container{
+    position: relative;
+    max-width: 200px;
+}
+
+div.image-container img{
+    width: 100%;
+    margin: 0;
+}
+
+div.image-container .image-buttons{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+
+div.image-container .image-buttons .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    color: #000;
+    cursor: pointer;
+}
+
+div.image-container .image-buttons .btn.delete{
+    background: #f00;
+}
+
+div.image-container .image-buttons .btn.update{
+    background: #0f0;
+    width: fit-content;
+}
+
+div.image-container .image-title{
+    padding: 0;
+    margin: 0;
+    outline: 1px solid;
+}

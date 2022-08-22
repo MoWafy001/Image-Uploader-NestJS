@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <form action="/images" enctype="multipart/form-data" method="post">
+        <input type="text" name="title" placeholder="title" required>
+        <input type="file" accept="image/*" name="image" placeholder="choose image" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    <div class="images">
+        <% if (images) { %> 
+            <% images.forEach(image => { %> 
+                <div class="image-container">
+                    <img src="<%= image.URL %>" alt="img">
+                    <input type="text" class="image-title" value="<%= image.title %>">
+                    <div class="image-buttons">
+                        <span data-img-id="<%= image._id %>" class="btn update">Update Title</span>
+                        <a href="images/<%= image._id %>/delete" class="btn delete">x</a>
+                    </div>
+                </div>
+            <% }) %> 
+        <% } %> 
+
+    </div>
+
+</body>
+</html>
